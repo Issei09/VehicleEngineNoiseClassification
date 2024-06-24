@@ -1,9 +1,9 @@
-import src.siamese_nn as nn
+import siamese_nn as nn
 import numpy as np
 import json
+import os
 
-
-epochs = 15
+epochs = 2
 learning = 0.00008
 
 
@@ -66,5 +66,12 @@ d = {"conf_mats": conf_mats.tolist(), "conf_mat_mean": mean_cvs.tolist(), "conf_
 
 
 current_destination_file = 'metrics_' + files[file_index] + '.json'
+# Extract the directory path
+directory = os.path.dirname(current_destination_file)
+
+# Create the directory if it does not exist
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
 with open(current_destination_file, "w") as f:
     json.dump(d, f)

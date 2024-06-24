@@ -1,14 +1,14 @@
 import keras
 import numpy as np
 import keras.backend as K
-import src.file_loader2 as fl
+import file_loader2 as fl
 from keras.layers import Input, Lambda
 from keras.models import Model
 from keras.optimizers import Adam
 import tensorflow as tf
 from keras.callbacks import Callback, ModelCheckpoint
 from keras.models import load_model
-from src.SpatialPyramidPooling import SpatialPyramidPooling
+from SpatialPyramidPooling import SpatialPyramidPooling
 import warnings
 
 

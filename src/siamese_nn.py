@@ -1,7 +1,7 @@
 import keras
 import numpy as np
 import keras.backend as K
-import src.file_loader as fl
+import file_loader as fl
 from keras.layers import Input, Lambda
 from keras.models import Model
 from keras.optimizers import Adam
@@ -40,6 +40,7 @@ def contrastive_loss(y_true, y_pred):
     '''Contrastive loss from Hadsell-et-al.'06
     http://yann.lecun.com/exdb/publis/pdf/hadsell-chopra-lecun-06.pdf
     '''
+    y_true = K.cast(y_true, 'float32')
     margin = 1
     square_pred = K.square(y_pred)
     margin_square = K.square(K.maximum(margin - y_pred, 0))

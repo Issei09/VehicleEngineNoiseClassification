@@ -1,4 +1,4 @@
-import src.siamese_nn_raw as nn
+import siamese_nn_raw as nn
 import json
 import numpy as np
 
